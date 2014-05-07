@@ -1,41 +1,45 @@
 <html>
 	<head>
     <link href="../styles/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
-    <link href="../styles/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
-    <!--[if lt IE 8]>
+   	<!--[if lt IE 8]>
       <link href="../sass/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <![endif]-->
 		<script type="text/javascript" src="../js/libs/jquery-2.1.1.min.js"></script>
-		<script type="text/javascript" src="../js/libs/handlebars-1.0.rc.1.min.js"></script>
+		<script type="text/javascript" src="../js/libs/underscore-min.js"></script>
 		<script type="text/javascript" src="../js/templating.js"></script>
 		<script id="my-template" type="text/x-handlebars-template">
-			<table>
-				{{#colors}}
-					<tr>
-						<td>
-							{{name}}
-						</td>
-					<tr>
-				{{/colors}}
-			</table>
+			<ul>
+				<% _.each (rc.colors, function( color ){ %>
+					<li>
+						<%- color.name %>
+					</li>
+				<% }); %>
+			</ul>
 		</script>
 
 	</head>
 
 
 	<body>
+		<div class="test"></div>
 		<div class="block">
 			<div class="centered">
 				<div class="container">
+
+
 					<div id="primary-colors">
-						Jon
+						<ul id="primary-color-list"></ul>
 					</div>
+
 					<div id="center-animation">
-						Stark
+						Circle
 					</div>
+
 					<div id="secondary-colors">
-						Snow
+						<ul id="primary-color-list"></ul>
 					</div>
+
+
 				</div>
 			</div>
 		</div>
