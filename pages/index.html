@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<script type="text/javascript" src="../js/libs/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="../js/libs/handlebars-1.0.rc.1.min.js"></script>
+		<script type="text/javascript" src="../js/templating.js"></script>
+
+	</head>
+	<body>
+		<script id="my-template" type="text/x-handlebars-template">
+			<table>
+				{{#colors}}
+					<tr>
+						<td>
+							{{name}}
+						</td>
+					<tr>
+				{{/colors}}
+			</table>
+		</script>
+		<div id="content"></div>
+	</body>
+</html>
+
