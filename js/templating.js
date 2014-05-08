@@ -24,10 +24,13 @@ $(document).ready(function() {
         $( "script#color-template" ).html()
     );
 
+    //set default color values in js and DOM
     primary_color = primary_color_data.colors[0].val;
     secondary_color = secondary_color_data.colors[0].val;
+	setOppositeColor(primary_color, template);
     setCenterCircle();
 
+    //click template and set click listener for primary
 	$("#primary-colors").html(
 		template(primary_color_data)
 	).on("click",".color-circle", function(e){
@@ -37,14 +40,46 @@ $(document).ready(function() {
 		setCenterCircle();
 	});
 
+	//template and set click listener for secondary
 	$("#secondary-colors").html(
 		template(secondary_color_data)
 	).on("click",".color-circle", function(e){
 		var el = e.target;
 		secondary_color = el.dataset.color;
 	});
+
+	$('.loader').knob({
+		'readOnly':true,
+		'width':"200",
+		'displayInput':false,
+		'fgColor':"#909090"
+	});
+
+	$(".loader").knob({
+		'change' : function(v) {console.log(v); }
+	});
+
+	$(".action").click(function(e){
+		setTimeout(incr_loader(0), 0); //calls the recursive timeout function
+	});
+
+
 });
 
+//recursive, calls itself every second
+function incr_loader(step){
+	num_seconds = 20;
+	if (step <= num_seconds){
+		return function(){
+			place = (step/num_seconds)*100;
+			$(".loader").val(place).trigger('change');
+			console.log(step);
+			setTimeout(incr_loader(step+1, num_seconds), 1000);
+		};
+	}
+}
+
+//takes in a color and a template, gets its opposite, saves that and uses it in template
 function setOppositeColor(color, template){
 	var opposite_color = _.find(secondary_color_data.colors, function(color){return color.name == "opposite";});
 	opposite_color.val=oppositeColor(color);

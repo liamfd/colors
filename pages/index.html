@@ -6,7 +6,9 @@
     <![endif]-->
 		<script type="text/javascript" src="../js/libs/jquery-2.1.1.min.js"></script>
 		<script type="text/javascript" src="../js/libs/underscore-min.js"></script>
+		<script type="text/javascript" src="../js/libs/jquery.knob.js"></script>
 		<script type="text/javascript" src="../js/templating.js"></script>
+
 		<script id="color-template" type="text/x-handlebars-template">
 			<ul class="color-list">
 				<% _.each (rc.colors, function( color ){ %>
@@ -31,9 +33,9 @@
 					</div>
 
 					<div id="center-animation">
-						<div class="main-circle">
-							<div class="action"></div>
-						</div>
+						<div class="main-circle"></div>
+						<input class="loader">
+						<div class="action play"></div>
 					</div>
 
 					<div id="secondary-colors">
