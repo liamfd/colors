@@ -29,7 +29,7 @@ $(document).ready(function() {
     //set default color values in js and DOM
     primary_color_name = primary_color_data.colors[0].name;
     secondary_color_name = secondary_color_data.colors[0].name;
-	setOppositeColor(getPrimaryColor(primary_color_name), template);
+	setOppositeColor(getPrimaryColor(), template);
     setCenterCircle(getPrimaryColor(primary_color_name).val);
 
 
@@ -47,8 +47,8 @@ $(document).ready(function() {
 		$(el).addClass("large-color-circle");
 
 		//save the color, set the center circle color
-		setOppositeColor(getPrimaryColor(primary_color_name), template);
-		setCenterCircle(getPrimaryColor(primary_color_name).val);
+		setOppositeColor(getPrimaryColor(), template);
+		setCenterCircle(getPrimaryColor().val);
 	});
 
 	//template and set click listener for secondary
@@ -75,7 +75,7 @@ $(document).ready(function() {
 		'readOnly':true,
 		'width':"200",
 		'displayInput':false,
-		'fgColor':"#909090"
+		'fgColor':"#999"
 	});
 
 	$(".loader").knob({
@@ -86,28 +86,31 @@ $(document).ready(function() {
 		setTimeout(incr_loader(0), 0); //calls the recursive timeout function
 		toggleCenterAction();
 	});
+	$("#additional-information").hide();
+	$("#toggle-bar").click(function(){
+		$("#additional-information").slideToggle();
+    });
 
 
 });
 
 //recursive, calls itself every second. This is a mess.
 function incr_loader(step){
-	num_seconds = 20;
+	var num_seconds = 20;
 	if (step <= num_seconds){
 		return function(){
 			place = (step/num_seconds)*100;
 			$(".loader").val(place).trigger('change');
-			console.log(step);
 			setTimeout(incr_loader(step+1, num_seconds), 1000);
 		};
 	}
 	else{ //changes the center color, then after 20 seconds resets it
-		setCenterCircle(getSecondaryColor(secondary_color_name).val);
-
+		setCenterCircle(getSecondaryColor().val);
+		var length_wait = 7000;
 		setTimeout(function(){
 			toggleCenterAction();
-			setCenterCircle(getPrimaryColor(primary_color_name).val);
-		}, 5000);
+			setCenterCircle(getPrimaryColor().val);
+		}, length_wait);
 	}
 }
 
@@ -118,7 +121,6 @@ function setOppositeColor(color, template){
 	opposite_color.val = oppositeColor(color.val);
 	
 	var opposite_element = $("#secondary-colors").find(".color-circle").last(); //opposite is always last
-	console.log(opposite_element);
 	opposite_element.css("background-color",opposite_color.val);
 
 	//$("#secondary-colors").html(
@@ -149,12 +151,12 @@ function setCenterCircle(color_val){
 
 
 //return color object, not value
-function getPrimaryColor(color_name){
-	return _.find(primary_color_data.colors, function(color){return color.name == color_name;});
+function getPrimaryColor(){
+	return _.find(primary_color_data.colors, function(color){return color.name == primary_color_name;});
 }
 
-function getSecondaryColor(color_name){
-	return _.find(secondary_color_data.colors, function(color){return color.name == color_name;});
+function getSecondaryColor(){
+	return _.find(secondary_color_data.colors, function(color){return color.name == secondary_color_name;});
 }
 
 function toggleCenterAction(){

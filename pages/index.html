@@ -9,6 +9,8 @@
 		<script type="text/javascript" src="../js/libs/jquery.knob.js"></script>
 		<script type="text/javascript" src="../js/templating.js"></script>
 
+		<link href='http://fonts.googleapis.com/css?family=Bitter:400,700|Oswald:400,300' rel='stylesheet' type='text/css'>
+
 		<script id="color-template" type="text/x-handlebars-template">
 			<ul class="color-list">
 				<% _.each (rc.colors, function( color ){ %>
@@ -23,11 +25,9 @@
 
 
 	<body>
-		<div class="test"></div>
 		<div class="block">
 			<div class="centered">
 				<div class="container">
-
 
 					<div id="primary-colors">
 					</div>
@@ -41,8 +41,24 @@
 					<div id="secondary-colors">
 					</div>
 
-
 				</div>
+			</div>
+		</div>
+
+		<div id="panel">
+			<div id="toggle-bar">
+				<h1>
+					Chimerical Colors
+				</h1>
+			</div>
+			<div id="additional-information">
+				<section class="details">
+					Welcome to Chimerical Colors. This term was taken from the work of Paul Churchland's paper <em>Chimerical Colors: Some Phenomenological Predictions from Cognitive Neuroscience</em>. </br></br>
+					You'll notice, if you've played around with the site (and we hope you have!) that if you press play, stare at the dot in the center, and are patient enough to let the timer run out without breaking focus, that colors appear that you might not expect otherwise. Don't panic. You aren't seeing things. Or rather, you are seeing things, but you're seeing the same things that everyone else does.What you're experiencing are actually impossible colors, colors that are generally inaccessible to human perception, which lie outside our usual color perception spindle. </br></br>
+					If you choose black as your secondary color, you can create <strong>stygian</strong> colors, where you have the opposite of your primary color laid onto the lack of brightness of blackness. A similar, if opposite process takes place when the after image is projected onto the white background, giving us <strong> self luminous </strong> colors, which appear to be glowing, though they are no brighter than the white that they are projected onto. Choosing grey as your secondary color will give you a neutral perception of the opposite color of your chosen primary. Finally, the last color is the exact opposite of the primary you choose, and therefore the same as that primary's after image. As a result, using it allows you to project the after image of a color onto itself. This gives you a <strong> Hyperbolic </strong> color. For example, choosing red as your primary with the opposing secondary will give you the a teal tealer than teal. </br></br>
+					This phenomenon arises as a result of the unique systems which our eyes use to percieve color, which rely on opposing red-green, yellow-blue, and light-dark sensors which tend to trend towards an equilibrium of 50% activation (so, not overly exposed to either color.) When a color is perceived, it is actived towards one or the other. Howevever, these sensors can eventually become fatigued. When this happens and they are suddenly exposed to another color, the relative difference results in whats commonly referred to as an "after image", where the ghost of the opposing color appears.</br></br>
+					For an infinitely better explanation, we highly encourage you to read the paper that inspired us. You may find it <a href="http://web.gc.cuny.edu/cogsci/private/Churchland-chimeric-colors.pdf">here.</a>
+				<section>
 			</div>
 		</div>
 	</body>
