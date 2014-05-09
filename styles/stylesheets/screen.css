@@ -114,8 +114,8 @@ body {
 #primary-colors {
   float: left;
   width: 38.46154%;
-  margin-left: -7.69231%;
-  margin-right: -30.76923%;
+  margin-left: 0%;
+  margin-right: -38.46154%;
   padding-left: 5px;
   padding-right: 5px;
   -moz-box-sizing: border-box;
@@ -132,8 +132,8 @@ body {
 #center-animation {
   float: left;
   width: 23.07692%;
-  margin-left: 30.76923%;
-  margin-right: -53.84615%;
+  margin-left: 38.46154%;
+  margin-right: -61.53846%;
   padding-left: 5px;
   padding-right: 5px;
   -moz-box-sizing: border-box;
@@ -144,14 +144,15 @@ body {
   _display: inline;
   _overflow: hidden;
   _overflow-y: visible;
+  position: relative;
 }
 
-/* line 43, ../sass/_layout.scss */
+/* line 44, ../sass/_layout.scss */
 #secondary-colors {
   float: left;
   width: 38.46154%;
-  margin-left: 53.84615%;
-  margin-right: -92.30769%;
+  margin-left: 61.53846%;
+  margin-right: -100%;
   padding-left: 5px;
   padding-right: 5px;
   -moz-box-sizing: border-box;
@@ -164,13 +165,13 @@ body {
   _overflow-y: visible;
 }
 
-@media only screen and (min-device-width: 920px) {
-  /* line 48, ../sass/_layout.scss */
-  #primary-colors {
+@media only screen and (max-device-width: 920px), only screen and (max-width: 920px) {
+  /* line 49, ../sass/_layout.scss */
+  #primary-colors, #center-animation, #secondary-colors {
     float: left;
-    width: 92.30769%;
-    margin-left: -7.69231%;
-    margin-right: -84.61538%;
+    width: 53.84615%;
+    margin-left: 23.07692%;
+    margin-right: -76.92308%;
     padding-left: 5px;
     padding-right: 5px;
     -moz-box-sizing: border-box;
@@ -181,34 +182,15 @@ body {
     _display: inline;
     _overflow: hidden;
     _overflow-y: visible;
-  }
-
-  /* line 52, ../sass/_layout.scss */
-  #center-animation {
     clear: left;
-    float: left;
-    width: 92.30769%;
-    margin-left: -7.69231%;
-    margin-right: -84.61538%;
-    padding-left: 5px;
-    padding-right: 5px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    box-sizing: border-box;
-    word-wrap: break-word;
-    _display: inline;
-    _overflow: hidden;
-    _overflow-y: visible;
-    position: relative;
   }
-
-  /* line 58, ../sass/_layout.scss */
-  #secondary-colors {
-    clear: left;
+}
+@media only screen and (max-device-width: 600px), only screen and (max-width: 600px) {
+  /* line 56, ../sass/_layout.scss */
+  #primary-colors, #center-animation, #secondary-colors {
     float: left;
-    width: 92.30769%;
-    margin-left: -7.69231%;
+    width: 69.23077%;
+    margin-left: 15.38462%;
     margin-right: -84.61538%;
     padding-left: 5px;
     padding-right: 5px;
@@ -220,6 +202,27 @@ body {
     _display: inline;
     _overflow: hidden;
     _overflow-y: visible;
+    clear: left;
+  }
+}
+@media only screen and (max-device-width: 600px), only screen and (max-width: 600px) {
+  /* line 63, ../sass/_layout.scss */
+  #primary-colors, #center-animation, #secondary-colors {
+    float: left;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: -100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    _display: inline;
+    _overflow: hidden;
+    _overflow-y: visible;
+    clear: left;
   }
 }
 /* line 31, ../sass/_elements.scss */
