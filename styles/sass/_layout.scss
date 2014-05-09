@@ -32,6 +32,7 @@ $zen-grid-width: 100% !default;
 .container{
   @include zen-grid-container();
 }
+
 #primary-colors{
   @include zen-grid-item(5,1);
 }
@@ -45,6 +46,8 @@ $zen-grid-width: 100% !default;
   @include zen-grid-item(5,9);
 }
 
+
+//decreasing breakpoints keep the elements centered, but not overlapping
 @media only screen and (max-device-width:920px), only screen and (max-width: 920px) {
   #primary-colors, #center-animation, #secondary-colors{
     @include zen-grid-item(7,4);

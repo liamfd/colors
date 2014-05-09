@@ -84,6 +84,7 @@ $(document).ready(function() {
 
 	$(".action").click(function(e){
 		setTimeout(incr_loader(0), 0); //calls the recursive timeout function
+		toggleCenterAction();
 	});
 
 
@@ -91,7 +92,7 @@ $(document).ready(function() {
 
 //recursive, calls itself every second. This is a mess.
 function incr_loader(step){
-	num_seconds = 1;
+	num_seconds = 20;
 	if (step <= num_seconds){
 		return function(){
 			place = (step/num_seconds)*100;
@@ -100,8 +101,13 @@ function incr_loader(step){
 			setTimeout(incr_loader(step+1, num_seconds), 1000);
 		};
 	}
-	else{
+	else{ //changes the center color, then after 20 seconds resets it
 		setCenterCircle(getSecondaryColor(secondary_color_name).val);
+
+		setTimeout(function(){
+			toggleCenterAction();
+			setCenterCircle(getPrimaryColor(primary_color_name).val);
+		}, 5000);
 	}
 }
 
@@ -135,8 +141,10 @@ function oppositeColor(in_color){
 	return out_color;
 }
 
-function setCenterCircle(color){
-	$(".main-circle").css("background-color",color);
+
+//takes in an actual value and sets the center circle color
+function setCenterCircle(color_val){
+	$(".main-circle").css("background-color",color_val);
 }
 
 
@@ -147,4 +155,10 @@ function getPrimaryColor(color_name){
 
 function getSecondaryColor(color_name){
 	return _.find(secondary_color_data.colors, function(color){return color.name == color_name;});
+}
+
+function toggleCenterAction(){
+	var action_element = $(".action");
+	action_element.toggleClass("play");
+	action_element.toggleClass("stare");
 }

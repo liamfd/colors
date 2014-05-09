@@ -21,6 +21,7 @@
 }
 
 $white:#fff;
+$black:#000;
 
 $main-height:200px;
 $dial-width:20;
@@ -37,9 +38,9 @@ $action-diameter:$main-height/8;
 	@include known-center($main-height, $main-height);
 }
 .stare{
-		@include known-center($action-diameter, $action-diameter);
-		@include circle($action-diameter);
-		background-color:$white;
+	@include known-center($action-diameter, $action-diameter);
+	@include circle($action-diameter);
+	background-color:#333;
 }
 .play{
 	@include triangle-right($action-diameter, $white);

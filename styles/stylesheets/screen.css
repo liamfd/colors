@@ -110,7 +110,7 @@ body {
   clear: both;
 }
 
-/* line 35, ../sass/_layout.scss */
+/* line 36, ../sass/_layout.scss */
 #primary-colors {
   float: left;
   width: 38.46154%;
@@ -128,7 +128,7 @@ body {
   _overflow-y: visible;
 }
 
-/* line 39, ../sass/_layout.scss */
+/* line 40, ../sass/_layout.scss */
 #center-animation {
   float: left;
   width: 23.07692%;
@@ -147,7 +147,7 @@ body {
   position: relative;
 }
 
-/* line 44, ../sass/_layout.scss */
+/* line 45, ../sass/_layout.scss */
 #secondary-colors {
   float: left;
   width: 38.46154%;
@@ -166,7 +166,7 @@ body {
 }
 
 @media only screen and (max-device-width: 920px), only screen and (max-width: 920px) {
-  /* line 49, ../sass/_layout.scss */
+  /* line 52, ../sass/_layout.scss */
   #primary-colors, #center-animation, #secondary-colors {
     float: left;
     width: 53.84615%;
@@ -186,7 +186,7 @@ body {
   }
 }
 @media only screen and (max-device-width: 600px), only screen and (max-width: 600px) {
-  /* line 56, ../sass/_layout.scss */
+  /* line 59, ../sass/_layout.scss */
   #primary-colors, #center-animation, #secondary-colors {
     float: left;
     width: 69.23077%;
@@ -206,7 +206,7 @@ body {
   }
 }
 @media only screen and (max-device-width: 600px), only screen and (max-width: 600px) {
-  /* line 63, ../sass/_layout.scss */
+  /* line 66, ../sass/_layout.scss */
   #primary-colors, #center-animation, #secondary-colors {
     float: left;
     width: 100%;
@@ -225,7 +225,7 @@ body {
     clear: left;
   }
 }
-/* line 31, ../sass/_elements.scss */
+/* line 32, ../sass/_elements.scss */
 .main-circle {
   height: 180px;
   width: 180px;
@@ -238,7 +238,7 @@ body {
   background-color: #888;
 }
 
-/* line 36, ../sass/_elements.scss */
+/* line 37, ../sass/_elements.scss */
 #loader {
   position: absolute;
   left: 50%;
@@ -247,7 +247,7 @@ body {
   margin-left: -100px;
 }
 
-/* line 39, ../sass/_elements.scss */
+/* line 40, ../sass/_elements.scss */
 .stare {
   position: absolute;
   left: 50%;
@@ -257,10 +257,10 @@ body {
   height: 25px;
   width: 25px;
   border-radius: 10000px;
-  background-color: white;
+  background-color: #333;
 }
 
-/* line 44, ../sass/_elements.scss */
+/* line 45, ../sass/_elements.scss */
 .play {
   border-top: 25px solid transparent;
   border-left: 50px solid white;
@@ -275,7 +275,7 @@ body {
   cursor: pointer;
 }
 
-/* line 54, ../sass/_elements.scss */
+/* line 55, ../sass/_elements.scss */
 .color-circle {
   height: 50px;
   width: 50px;
@@ -290,7 +290,7 @@ body {
   box-sizing: border-box;
 }
 
-/* line 60, ../sass/_elements.scss */
+/* line 61, ../sass/_elements.scss */
 .large-color-circle {
   height: 70px;
   width: 70px;
@@ -302,17 +302,17 @@ body {
   margin-left: -35px;
 }
 
-/* line 65, ../sass/_elements.scss */
+/* line 66, ../sass/_elements.scss */
 .color-circle:hover {
   border: 3px solid #303030;
 }
 
-/* line 70, ../sass/_elements.scss */
+/* line 71, ../sass/_elements.scss */
 .color-list {
   height: 200px;
 }
 
-/* line 74, ../sass/_elements.scss */
+/* line 75, ../sass/_elements.scss */
 .color-element {
   position: relative;
   display: inline-block;
