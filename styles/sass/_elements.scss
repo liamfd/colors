@@ -1,0 +1,79 @@
+@mixin known-center($height, $width){
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-top:$height/-2;
+	margin-left:$width/-2;
+}
+
+@mixin triangle-right($size, $color){
+	border-top:$size solid transparent;
+	border-left:$size*2 solid $color;
+	border-bottom:$size solid transparent;
+	height:0px;
+	width:0px;
+}
+
+@mixin circle($size){
+	height:$size;
+	width:$size;
+	border-radius:10000px; //arbitrarily large
+}
+
+$white:#fff;
+
+$main-height:200px;
+$dial-width:20;
+$main-diameter:$main-height - $dial-width;
+$action-diameter:$main-height/8;
+
+
+.main-circle{
+	@include circle($main-diameter);
+	@include known-center($main-diameter, $main-diameter);
+	background-color:#888;
+}
+#loader{
+	@include known-center($main-height, $main-height);
+}
+.stare{
+		@include known-center($action-diameter, $action-diameter);
+		@include circle($action-diameter);
+		background-color:$white;
+}
+.play{
+	@include triangle-right($action-diameter, $white);
+	@include known-center($action-diameter*2, $action-diameter*(3/2)); //fudge it slightly, due to triangle proportions
+	cursor:pointer;
+}
+
+
+
+
+$color-diameter:50px;
+.color-circle{
+	@include circle($color-diameter);
+	@include known-center($color-diameter, $color-diameter);
+	@include box-sizing(border-box);
+}
+
+.large-color-circle{
+	@include circle($color-diameter+20);
+	@include known-center($color-diameter+20, $color-diameter+20);
+}
+
+.color-circle:hover{
+	border: 3px solid #303030;
+
+}
+
+.color-list{
+	height:$main-height;
+}
+
+.color-element{
+	position:relative;
+	display:inline-block;
+	height:100%;
+	width:24%;
+}
